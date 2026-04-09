@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIMM Sleep Wear - Pijamas Artesanais</title>
+    <style>
+        :root {
+            --cor-principal: #ffb6c1; 
+            --cor-texto: #333333;
+            --cor-fundo: #fdfdfd;
+            --cor-destaque: #d63384;
+        }
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo);
+            line-height: 1.6;
+        }
+
+
+        header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--cor-principal);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+
+
+        nav { margin-top: 10px; }
+        nav a { text-decoration: none; color: var(--cor-texto); margin: 0 15px; font-weight: bold; font-size: 14px; }
+
+
+        .hero { background-color: #ffe4e1; text-align: center; padding: 50px 20px; }
+
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        h2 { text-align: center; color: #555; text-transform: uppercase; letter-spacing: 1px; }
+
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+
+        .produto-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* --- ESTILOS DO CARROSSEL --- */
+        .carrossel-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+
+        .carrossel-slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+
+        .carrossel-slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+
+        .carrossel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+
+        .carrossel-indicadores {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .indicador {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .indicador.active { background-color: white; }
+
+
+        /* --- FIM CARROSSEL --- */
+
+
+        .produto-info { padding: 20px; flex-grow: 1; }
+        .produto-info h3 { margin: 0 0 10px 0; color: #444; }
+
+
+        .tabela-precos {
+            width: 100%;
+            margin: 15px 0;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .tabela-precos td { padding: 5px 0; border-bottom: 1px dashed #eee; }
+        .tabela-precos .valor { text-align: right; font-weight: bold; color: var(--cor-destaque); }
+
+
+        .btn-comprar {
+            display: block;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+
+        footer { background-color: #333; color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
+        footer p { margin: 5px 0; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <h1>🌙 JIMM Sleep Wear</h1>
+        <nav>
+            <a href="#produtos">CATÁLOGO</a>
+            <a href="#sobre">NOSSA HISTÓRIA</a>
+            <a href="#contato">CONTATO</a>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <h2>Conforto para suas noites</h2>
+        <p>Pijamas feitos à mão com malhas selecionadas para o seu melhor descanso.</p>
+    </section>
+
+
+    <div class="container" id="produtos">
+        <h2>Coleção e Valores</h2>
+        
+        <div class="produtos-grid">
+            
+            <div class="produto-card">
+                <div class="carrossel-container" id="carrossel-infantil">
+                    <div class="carrossel-slides">
+                        <img src="file:///Users/elenarageraldo/Downloads/WhatsApp%20Image%202026-04-01%20at%2013.44.58.jpeg" alt="Pijama Infantil 1">
+                        <img src="file:///Users/elenarageraldo/Documents/pijamas/pijama-infantil-fake.png" alt="Pijama Infantil 2">
+                        <img src="file:///Users/elenarageraldo/Downloads/WhatsApp%20Image%202026-04-01%20at%2013.44.58.jpeg" alt="Pijama Infantil 3">
+                    </div>
+                    <button class="carrossel-btn prev" onclick="mudarSlide(-1, 'carrossel-infantil')">&#10094;</button>
+                    <button class="carrossel-btn next" onclick="mudarSlide(1, 'carrossel-infantil')">&#10095;</button>
+                    <div class="carrossel-indicadores">
+                        <span class="indicador active" onclick="irParaSlide(0, 'carrossel-infantil')"></span>
+                        <span class="indicador" onclick="irParaSlide(1, 'carrossel-infantil')"></span>
+                        <span class="indicador" onclick="irParaSlide(2, 'carrossel-infantil')"></span>
+                    </div>
+                </div>
+
+
+                <div class="produto-info">
+                    <h3>Linha Infantil Divertida</h3>
+                    <p>Estampas alegres em tecido suave para a pele das crianças.</p>
+                    <table class="tabela-precos">
+                        <tr><td>Tamanho 1 ao 2</td><td class="valor">R$ 54,90</td></tr>
+                        <tr><td>Tamanho 4 ao 6</td><td class="valor">R$ 62,90</td></tr>
+                        <tr><td>Tamanho 8 ao 10</td><td class="valor">R$ 71,90</td></tr>
+                        <tr><td>Tamanho 12 ao 14</td><td class="valor">R$ 79,90</td></tr>
+                    </table>
+                    <a href="https://wa.me/5541997772014?text=Olá! Gostaria de ver as estampas disponíveis do pijama INFANTIL." target="_blank" class="btn-comprar">Encomendar no Whats</a>
+                </div>
+            </div>
+
+
+            <div class="produto-card">
+                <div class="carrossel-container" id="carrossel-adulto">
+                    <div class="carrossel-slides">
+                        <img src="file:///Users/elenarageraldo/Documents/pijamas/10bd6cb1-33a3-456e-b459-1ee13c8f76c6.jpg" alt="Pijama Adulto 1">
+                        <img src="file:///Users/elenarageraldo/Documents/pijamas/Design%20sem%20nome.png" alt="Pijama Adulto 2">
+                        <img src="file:///Users/elenarageraldo/Documents/pijamas/pijama-infantil-fake.png" alt="Pijama Adulto 3">
+                    </div>
+                    <button class="carrossel-btn prev" onclick="mudarSlide(-1, 'carrossel-adulto')">&#10094;</button>
+                    <button class="carrossel-btn next" onclick="mudarSlide(1, 'carrossel-adulto')">&#10095;</button>
+                    <div class="carrossel-indicadores">
+                        <span class="indicador active" onclick="irParaSlide(0, 'carrossel-adulto')"></span>
+                        <span class="indicador" onclick="irParaSlide(1, 'carrossel-adulto')"></span>
+                        <span class="indicador" onclick="irParaSlide(2, 'carrossel-adulto')"></span>
+                    </div>
+                </div>
+
+
+                <div class="produto-info">
+                    <h3>Linha Adulto Confort</h3>
+                    <p>Disponível em Malha Suede (toque de pêssego) e Viscolycra.</p>
+                    <table class="tabela-precos">
+                        <tr><td>Tamanhos P ao G</td><td class="valor">R$ 89,90</td></tr>
+                        <tr><td>Tamanhos GG ao XG</td><td class="valor">R$ 98,90</td></tr>
+                    </table>
+                    <a href="https://wa.me/5541997772014?text=Olá! Tenho interesse no pijama ADULTO. Quais cores você tem?" target="_blank" class="btn-comprar">Encomendar no Whats</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="container" id="sobre">
+        <h2>Nossa História</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+            A <strong>JIMM Sleep Wear</strong> nasceu da paixão pela costura artesanal. Somos uma confecção familiar dedicada a criar momentos de descanso perfeitos. Cada peça é cortada e costurada à mão pela Day, garantindo qualidade, carinho e tecidos que abraçam o corpo.
+        </p>
+    </div>
+
+
+    <footer id="contato">
+        <p><strong>JIMM SLEEP WEAR</strong></p>
+        <p>© 2026 Todos os direitos reservados.</p>
+        <p>📧 contato@jimmsleepwear.com.br</p>
+        <p>Feito com amor por Day e Família 🧵</p>
+    </footer>
+
+
+    <script>
+        let estadosCarrossel = {
+            'carrossel-infantil': 0,
+            'carrossel-adulto': 0
+        };
+
+
+        function atualizarCarrossel(id) {
+            const container = document.getElementById(id);
+            const slides = container.querySelector('.carrossel-slides');
+            const indicadores = container.querySelectorAll('.indicador');
+            slides.style.transform = `translateX(-${estadosCarrossel[id] * 100}%)`;
+            indicadores.forEach((ind, i) => {
+                ind.classList.toggle('active', i === estadosCarrossel[id]);
+            });
+        }
+
+
+        function mudarSlide(delta, id) {
+            const container = document.getElementById(id);
+            const total = container.querySelectorAll('.carrossel-slides img').length;
+            estadosCarrossel[id] = (estadosCarrossel[id] + delta + total) % total;
+            atualizarCarrossel(id);
+        }
+
+
+        function irParaSlide(idx, id) {
+            estadosCarrossel[id] = idx;
+            atualizarCarrossel(id);
+        }
+    </script>
+</body>
+</html>
